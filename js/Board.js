@@ -8,18 +8,25 @@ class Board {
 
     createSpaces(){
 
-        const spaceArray = [];
+        const spaces = [];
 
-        for (let x = 0; x < this.columns; i++) {
-            const column = [];
+        for (let x = 0; x < this.columns; x++) {
+            const col = [];
 
-            for (let y = 0; y < this.rows; j++) {
+            for (let y = 0; y < this.rows; y++) {
                 let space = new Space(x, y);
-                column.push(space);
+                col.push(space);
             }
-            spaceArray.push(column);
+            spaces.push(col);
         }
-        return spaceArray
+        return spaces;
     }
-    
+
+    drawHTMLBoard(){
+        for (let column of this.spaceArray) {
+            for (let space of column) {
+                space.drawSVGSpace();
+            }
+        }
+    }
 }
