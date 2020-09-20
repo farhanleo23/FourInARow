@@ -1,4 +1,5 @@
 class Game {
+    
     constructor() {
         this.board = new Board();
         this.players = this.createPlayers();
@@ -33,5 +34,17 @@ class Game {
         this.board.drawHTMLBoard();
         this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
+    }
+
+    handleKeyDown(e){
+        if (this.ready == true) {
+            if (e.key == 'ArrowRight') {
+                
+            } else if (e.key == 'ArrowLeft') {
+                
+            } else if (e.key == 'ArrowDown') {
+                
+            }
+        }
     }
 }
